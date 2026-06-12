@@ -1,65 +1,140 @@
-import Image from "next/image";
+import { query } from "@/lib/db";
 
-export default function Home() {
+// Always render fresh from the database (no build-time prerender)
+export const dynamic = "force-dynamic";
+
+const masteryLabel: Record<string, string> = {
+  BEGINNER: "Beginner",
+  INTERMEDIATE: "Intermediate",
+  EXPERT: "Expert",
+  MASTER: "Master",
+};
+
+type TradesmanRow = {
+  id: number;
+  name: string;
+  location: string;
+  bio: string | null;
+  verified: boolean;
+  avg_rating: number | null;
+  review_count: number;
+  completed_jobs: number;
+  services: { name: string; category: string; price: number; mastery: string }[];
+};
+
+async function getTradesmen() {
+  const { rows } = await query<TradesmanRow>(`
+    SELECT
+        t.id, t.name, t.location, t.bio, t.verified,
+        rep.avg_rating::float8   AS avg_rating,
+        rep.review_count::int    AS review_count,
+        rep.completed_jobs::int  AS completed_jobs,
+        COALESCE(
+            json_agg(
+                json_build_object(
+                    'name',     s.name,
+                    'category', s.category,
+                    'price',    ts.price,
+                    'mastery',  ts.mastery
+                ) ORDER BY s.name
+            ) FILTER (WHERE s.id IS NOT NULL),
+            '[]'
+        ) AS services
+    FROM tradesmen t
+    JOIN tradesman_reputation rep ON rep.tradesman_id = t.id
+    LEFT JOIN tradesman_services ts ON ts.tradesman_id = t.id
+    LEFT JOIN services s            ON s.id = ts.service_id
+    GROUP BY t.id, rep.avg_rating, rep.review_count, rep.completed_jobs
+    ORDER BY rep.avg_rating DESC NULLS LAST, t.name
+  `);
+  return rows;
+}
+
+export default async function Home() {
+  let tradesmen: TradesmanRow[] | null = null;
+  let dbError = false;
+
+  try {
+    tradesmen = await getTradesmen();
+  } catch {
+    dbError = true;
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="mx-auto max-w-4xl flex-1 px-6 py-12">
+      <header className="mb-10">
+        <h1 className="text-3xl font-bold">
+          Pega<span className="text-amber-600">Bao</span>
+        </h1>
+        <p className="mt-1 text-sm text-gray-500">
+          Find trusted local tradesmen — verified skills, real reviews.
+        </p>
+      </header>
+
+      {dbError ? (
+        <div className="rounded-lg border border-amber-300 bg-amber-50 p-6 text-sm">
+          <p className="font-semibold">Database not reachable</p>
+          <p className="mt-2 text-gray-700">
+            Start PostgreSQL (or point <code>.env</code> at Supabase), then run{" "}
+            <code className="rounded bg-amber-100 px-1">npm run db:setup</code>{" "}
+            and{" "}
+            <code className="rounded bg-amber-100 px-1">npm run db:seed</code>{" "}
+            — see the README for setup steps.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      ) : (
+        <ul className="space-y-4">
+          {tradesmen!.map((t) => (
+            <li
+              key={t.id}
+              className="rounded-lg border border-gray-200 p-5 shadow-sm"
+            >
+              <div className="flex items-baseline justify-between">
+                <h2 className="text-lg font-semibold">
+                  {t.name}
+                  {t.verified && (
+                    <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                      Verified
+                    </span>
+                  )}
+                </h2>
+                <span className="text-sm text-gray-500">{t.location}</span>
+              </div>
+
+              <p className="mt-1 text-sm text-gray-600">{t.bio}</p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                {t.services.map((s) => (
+                  <span
+                    key={s.name}
+                    className="rounded-full bg-gray-100 px-3 py-1 text-xs"
+                  >
+                    {s.name} · ₱{Number(s.price).toLocaleString()} ·{" "}
+                    {masteryLabel[s.mastery]}
+                  </span>
+                ))}
+              </div>
+
+              <p className="mt-3 text-sm">
+                {t.avg_rating !== null ? (
+                  <>
+                    <span className="font-medium text-amber-600">
+                      ★ {t.avg_rating.toFixed(1)}
+                    </span>{" "}
+                    <span className="text-gray-500">
+                      ({t.review_count} review{t.review_count === 1 ? "" : "s"}{" "}
+                      · {t.completed_jobs} completed job
+                      {t.completed_jobs === 1 ? "" : "s"})
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-gray-400">No reviews yet</span>
+                )}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
   );
 }

@@ -122,3 +122,18 @@ FROM tradesmen t
 LEFT JOIN bookings b ON b.tradesman_id = t.id
 LEFT JOIN reviews  r ON r.booking_id = b.id
 GROUP BY t.id;
+
+-- ----------------------------------------------------------------------------
+-- Row Level Security
+-- Supabase auto-exposes public tables through a REST API keyed by the public
+-- `anon` key. Enabling RLS with no policies blocks that API entirely, while
+-- the app's direct connection (table owner) bypasses RLS and is unaffected.
+-- Harmless locally — the superuser bypasses RLS, so the app still works.
+-- (Views don't take RLS; tradesman_reputation inherits its base tables'.)
+-- ----------------------------------------------------------------------------
+ALTER TABLE tradesmen          ENABLE ROW LEVEL SECURITY;
+ALTER TABLE customers          ENABLE ROW LEVEL SECURITY;
+ALTER TABLE services           ENABLE ROW LEVEL SECURITY;
+ALTER TABLE tradesman_services ENABLE ROW LEVEL SECURITY;
+ALTER TABLE bookings           ENABLE ROW LEVEL SECURITY;
+ALTER TABLE reviews            ENABLE ROW LEVEL SECURITY;

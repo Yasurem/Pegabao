@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Onboarding - Location Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#83746d",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-primary-fixed": "#311303",
+                        "surface-container": "#efedec",
+                        "tertiary-container": "#989ebe",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d6c3bb",
+                        "surface": "#fbf9f7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#522d19",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#dde1ff",
+                        "secondary": "#875300",
+                        "primary": "#80543d",
+                        "surface-dim": "#dbdad8",
+                        "secondary-fixed": "#ffddb9",
+                        "on-background": "#1b1c1b",
+                        "secondary-container": "#fdb65f",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbcb",
+                        "on-tertiary-container": "#2f3550",
+                        "inverse-primary": "#f4ba9e",
+                        "surface-container-low": "#f5f3f1",
+                        "inverse-surface": "#30302f",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface": "#1b1c1b",
+                        "on-secondary-container": "#744600",
+                        "tertiary": "#575d7a",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#51443e",
+                        "surface-bright": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "primary-container": "#c99379",
+                        "background": "#fbf9f7",
+                        "surface-tint": "#80543d",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "base": "8px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "touch-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col items-center">
+<main class="w-full max-w-md bg-surface min-h-screen flex flex-col shadow-sm relative">
+<!-- Header -->
+<header class="w-full top-0 sticky bg-surface z-10 px-margin-mobile py-base border-b border-outline-variant/20 flex items-center gap-4">
+<button class="w-[48px] h-[48px] flex items-center justify-center text-on-surface hover:bg-surface-container-high rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="flex-1">
+<p class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Step 2 of 3</p>
+<div class="w-full bg-surface-variant h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full w-2/3 rounded-full"></div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 px-margin-mobile py-stack-md flex flex-col gap-stack-md">
+<section class="flex flex-col gap-stack-sm text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background md:font-headline-lg md:text-headline-lg">Saan ang iyong tahanan?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">We need your address to connect you with reliable tradespeople in your local barangay.</p>
+</section>
+<!-- Search Input -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full h-[56px] pl-12 pr-4 bg-surface border-2 border-tertiary-container text-on-surface font-body-lg text-body-lg rounded-lg focus:border-secondary-container focus:ring-0 outline-none transition-colors placeholder-outline" placeholder="Maghanap ng address..." type="text"/>
+</div>
+<!-- Current Location Button -->
+<button class="w-full h-[56px] flex items-center justify-center gap-2 border-2 border-tertiary bg-surface text-tertiary font-cta text-cta rounded-lg hover:bg-tertiary-container/10 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">my_location</span>
+                Gamitin ang kasalukuyang lokasyon
+            </button>
+<!-- Map Preview Area -->
+<div class="w-full h-[240px] rounded-xl overflow-hidden border border-outline-variant/20 relative shadow-sm mt-4 bg-surface-container">
+<img alt="Map View" class="w-full h-full object-cover" data-alt="A clean, high-contrast modern UI map view displaying a residential neighborhood in Manila, Philippines. The map uses warm, sunny colors reflecting a dependable community atmosphere. Streets are clearly marked with thick lines for extreme legibility, and a large, bold pin icon in Persian Orange marks a central location. The lighting implies bright daylight, fitting a mobile-first design strategy." data-location="Manila, Philippines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_yY9-i7_cfvd20XmrQ5REZhPn-_-xudJ3XreIO6z6LMkGoT6gZ2ViO0heqaU0sRJiwUeDZYyF8JWF9ZGrg0yviNjz7lC3MRzBkFVXmV7A4geQ04Oosgh9Ui-dW5js3b00ZbmsGASG_0ATnUDBJCyGD86GaS4t8qLkpNsrmwP2iAg_hl_cgU4v9NDa7Y_jkkvfMBdJufheBw0nZc0_WNxBYk4MkvC9MbBmLX7t3A14VRAHSRMCKh0YzY8UTX1dOBwMfyjcFagZfI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 to-transparent flex items-end p-4">
+<div class="bg-surface border border-outline-variant/20 p-3 rounded-lg shadow-sm flex items-center gap-3 w-full">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Selected Area</span>
+<span class="font-body-md text-body-md text-on-surface-variant truncate w-48">Brgy. San Lorenzo, Makati</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer to push button to bottom on tall screens -->
+<div class="flex-1"></div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="w-full bg-surface p-margin-mobile border-t border-outline-variant/20 sticky bottom-0 z-10 pb-safe">
+<button class="w-full h-[56px] bg-primary text-on-primary font-cta text-cta rounded-lg flex items-center justify-center shadow-sm hover:bg-primary/90 active:scale-[0.98] transition-all">
+                Tapusin ang Setup
+            </button>
+</div>
+</main>
+</body></html>

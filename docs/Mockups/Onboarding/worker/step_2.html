@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PegaBao - Tradesperson Onboarding</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Setup -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#83746d",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-primary-fixed": "#311303",
+                        "surface-container": "#efedec",
+                        "tertiary-container": "#989ebe",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d6c3bb",
+                        "surface": "#fbf9f7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#522d19",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#dde1ff",
+                        "secondary": "#875300",
+                        "primary": "#80543d",
+                        "surface-dim": "#dbdad8",
+                        "secondary-fixed": "#ffddb9",
+                        "on-background": "#1b1c1b",
+                        "secondary-container": "#fdb65f",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbcb",
+                        "on-tertiary-container": "#2f3550",
+                        "inverse-primary": "#f4ba9e",
+                        "surface-container-low": "#f5f3f1",
+                        "inverse-surface": "#30302f",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface": "#1b1c1b",
+                        "on-secondary-container": "#744600",
+                        "tertiary": "#575d7a",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#51443e",
+                        "surface-bright": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "primary-container": "#c99379",
+                        "background": "#fbf9f7",
+                        "surface-tint": "#80543d",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "base": "8px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "touch-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles for animations and specific states */
+        .skill-card.selected {
+            border-color: #80543d; /* primary */
+            background-color: #fbf9f7; /* surface */
+        }
+        .skill-card.selected .checkbox-icon {
+            background-color: #80543d; /* primary */
+            border-color: #80543d;
+            color: #ffffff;
+        }
+        .mastery-pill.selected {
+            background-color: #522d19; /* on-primary-container */
+            color: #ffffff;
+            border-color: #522d19;
+        }
+        
+        /* Subtle pattern for background */
+        .bg-pattern {
+            background-image: radial-gradient(#d6c3bb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased">
+<!-- Transactional Header (Navigation Shell Suppressed per rules) -->
+<header class="w-full top-0 sticky z-40 bg-surface-container-lowest flex items-center justify-between px-margin-mobile py-base min-h-[64px]">
+<button aria-label="Back" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex-1 text-center">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Hakbang 1 ng 4</span>
+</div>
+<div class="w-12 h-12"></div> <!-- Spacer for balance -->
+</header>
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="w-1/4 h-full bg-primary rounded-r-full"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col relative w-full max-w-3xl mx-auto px-margin-mobile pt-stack-md pb-32">
+<!-- Hero/Title Area -->
+<div class="mb-stack-md relative z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">
+                Anong mga serbisyo ang iyong inaalok?
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Pumili ng isa o higit pang kategorya at ilagay ang iyong antas ng karanasan para matulungan kaming ihanap ka ng mga tamang kliyente.
+            </p>
+</div>
+<!-- Multi-Select Skill Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm w-full relative z-10" id="skill-grid">
+<!-- Skill Card: Carpentry -->
+<div class="skill-card bg-surface border-2 border-surface-container-highest rounded-xl p-4 transition-all duration-200">
+<div class="flex items-center gap-4 cursor-pointer toggle-trigger min-h-[touch-target-min]">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">carpenter</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Karpintero</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight">Carpentry &amp; Woodwork</p>
+</div>
+<div class="checkbox-icon w-6 h-6 border-2 border-outline rounded flex items-center justify-center transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px] opacity-0 transition-opacity">check</span>
+</div>
+</div>
+<!-- Mastery Selector (Hidden by default) -->
+<div class="mastery-section hidden mt-4 pt-4 border-t border-outline-variant/30">
+<p class="font-label-lg text-label-lg text-on-surface mb-3">Antas ng Karanasan (Mastery)</p>
+<div class="flex flex-col gap-2">
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]">
+<span>Basic (Baguhan)</span>
+</button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]">
+<span>Intermediate (Marunong)</span>
+</button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]">
+<span>Master (Bihasa)</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Skill Card: Plumbing -->
+<div class="skill-card bg-surface border-2 border-surface-container-highest rounded-xl p-4 transition-all duration-200">
+<div class="flex items-center gap-4 cursor-pointer toggle-trigger min-h-[touch-target-min]">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">plumbing</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Tubero</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight">Plumbing &amp; Pipes</p>
+</div>
+<div class="checkbox-icon w-6 h-6 border-2 border-outline rounded flex items-center justify-center transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px] opacity-0 transition-opacity">check</span>
+</div>
+</div>
+<div class="mastery-section hidden mt-4 pt-4 border-t border-outline-variant/30">
+<p class="font-label-lg text-label-lg text-on-surface mb-3">Antas ng Karanasan (Mastery)</p>
+<div class="flex flex-col gap-2">
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Basic (Baguhan)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Intermediate (Marunong)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Master (Bihasa)</span><span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span></button>
+</div>
+</div>
+</div>
+<!-- Skill Card: Electrical -->
+<div class="skill-card bg-surface border-2 border-surface-container-highest rounded-xl p-4 transition-all duration-200">
+<div class="flex items-center gap-4 cursor-pointer toggle-trigger min-h-[touch-target-min]">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">electrical_services</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Kuryente</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight">Electrical Wiring &amp; Repair</p>
+</div>
+<div class="checkbox-icon w-6 h-6 border-2 border-outline rounded flex items-center justify-center transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px] opacity-0 transition-opacity">check</span>
+</div>
+</div>
+<div class="mastery-section hidden mt-4 pt-4 border-t border-outline-variant/30">
+<p class="font-label-lg text-label-lg text-on-surface mb-3">Antas ng Karanasan (Mastery)</p>
+<div class="flex flex-col gap-2">
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Basic (Baguhan)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Intermediate (Marunong)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Master (Bihasa)</span><span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span></button>
+</div>
+</div>
+</div>
+<!-- Skill Card: Cleaning -->
+<div class="skill-card bg-surface border-2 border-surface-container-highest rounded-xl p-4 transition-all duration-200">
+<div class="flex items-center gap-4 cursor-pointer toggle-trigger min-h-[touch-target-min]">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface">Paglilinis</h3>
+<p class="text-[12px] text-on-surface-variant leading-tight">Deep Cleaning &amp; Housekeeping</p>
+</div>
+<div class="checkbox-icon w-6 h-6 border-2 border-outline rounded flex items-center justify-center transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px] opacity-0 transition-opacity">check</span>
+</div>
+</div>
+<div class="mastery-section hidden mt-4 pt-4 border-t border-outline-variant/30">
+<p class="font-label-lg text-label-lg text-on-surface mb-3">Antas ng Karanasan (Mastery)</p>
+<div class="flex flex-col gap-2">
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Basic (Baguhan)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Intermediate (Marunong)</span></button>
+<button class="mastery-pill flex items-center justify-between w-full p-3 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface transition-colors hover:bg-surface-container min-h-[touch-target-min]"><span>Master (Bihasa)</span><span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span></button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant/20 px-margin-mobile py-4 z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="max-w-3xl mx-auto flex gap-4">
+<button class="w-full h-[56px] bg-primary hover:bg-primary/90 text-on-primary rounded-lg font-cta text-cta flex items-center justify-center transition-transform active:scale-[0.98] opacity-50 cursor-not-allowed" disabled="" id="next-btn">
+                Susunod
+            </button>
+</div>
+<!-- Safe area padding for newer mobile devices -->
+<div class="h-safe-area-inset-bottom"></div>
+</div>
+<!-- Interactive Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillCards = document.querySelectorAll('.skill-card');
+            const nextBtn = document.getElementById('next-btn');
+
+            function updateNextButtonState() {
+                // Check if any card is selected AND has a mastery level selected
+                let canProceed = false;
+                const selectedCards = document.querySelectorAll('.skill-card.selected');
+                
+                selectedCards.forEach(card => {
+                    if (card.querySelector('.mastery-pill.selected')) {
+                        canProceed = true;
+                    }
+                });
+
+                if (canProceed) {
+                    nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    nextBtn.removeAttribute('disabled');
+                } else {
+                    nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    nextBtn.setAttribute('disabled', 'true');
+                }
+            }
+
+            skillCards.forEach(card => {
+                const trigger = card.querySelector('.toggle-trigger');
+                const masterySection = card.querySelector('.mastery-section');
+                const checkIcon = card.querySelector('.checkbox-icon span');
+                const masteryPills = card.querySelectorAll('.mastery-pill');
+
+                // Toggle Card Selection
+                trigger.addEventListener('click', () => {
+                    card.classList.toggle('selected');
+                    
+                    if (card.classList.contains('selected')) {
+                        masterySection.classList.remove('hidden');
+                        checkIcon.classList.remove('opacity-0');
+                    } else {
+                        masterySection.classList.add('hidden');
+                        checkIcon.classList.add('opacity-0');
+                        // Clear inner selections when card is deselected
+                        masteryPills.forEach(p => p.classList.remove('selected'));
+                    }
+                    updateNextButtonState();
+                });
+
+                // Handle Mastery Level Selection
+                masteryPills.forEach(pill => {
+                    pill.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent card toggle
+                        
+                        // Deselect siblings
+                        masteryPills.forEach(p => p.classList.remove('selected'));
+                        // Select clicked
+                        pill.classList.add('selected');
+                        
+                        updateNextButtonState();
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>

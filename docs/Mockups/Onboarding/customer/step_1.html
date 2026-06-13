@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="tl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maligayang Pagdating! - PegaBao Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efedec",
+                        "primary": "#80543d",
+                        "outline-variant": "#d6c3bb",
+                        "surface-container-highest": "#e4e2e0",
+                        "surface-container-low": "#f5f3f1",
+                        "on-background": "#1b1c1b",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "surface-dim": "#dbdad8",
+                        "inverse-surface": "#30302f",
+                        "tertiary-fixed": "#dde1ff",
+                        "secondary-fixed": "#ffddb9",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#c99379",
+                        "on-secondary-container": "#744600",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "outline": "#83746d",
+                        "tertiary-container": "#989ebe",
+                        "inverse-primary": "#f4ba9e",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-tertiary-container": "#2f3550",
+                        "inverse-on-surface": "#f2f0ee",
+                        "on-primary-fixed": "#311303",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f7",
+                        "surface-tint": "#80543d",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f7",
+                        "surface": "#fbf9f7",
+                        "tertiary": "#575d7a",
+                        "primary-fixed": "#ffdbcb",
+                        "on-surface-variant": "#51443e",
+                        "on-surface": "#1b1c1b",
+                        "error-container": "#ffdad6",
+                        "secondary": "#875300",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdb65f",
+                        "surface-container-high": "#eae8e6",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#522d19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "stack-sm": "12px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "cta": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-sans selection:bg-primary-container selection:text-on-primary-container">
+<!-- Progress Indicator - Linear/Transactional Splash Screen -->
+<header class="w-full flex items-center justify-between px-margin-mobile pt-margin-mobile pb-stack-sm sticky top-0 bg-background z-10">
+<div class="flex items-center gap-2">
+<div class="w-12 h-2 rounded-full bg-primary"></div>
+<div class="w-12 h-2 rounded-full bg-surface-variant"></div>
+<div class="w-12 h-2 rounded-full bg-surface-variant"></div>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Step 1 of 3</span>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile pb-margin-mobile md:px-margin-desktop items-center justify-center max-w-2xl mx-auto w-full">
+<!-- Hero Visual -->
+<div class="w-full relative mb-stack-md rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 aspect-square md:aspect-video bg-surface-container-low">
+<img alt="Tradesperson and customer shaking hands" class="w-full h-full object-cover" data-alt="A warm, bright photograph of a friendly local tradesperson and a customer shaking hands in front of a clean, modern home interior. The scene is illuminated by natural sunlight, emphasizing high contrast and a dependable, welcoming atmosphere. The tradesperson wears a neat, practical uniform, while the customer looks satisfied. The color palette features warm terracotta and amber tones, aligning perfectly with a modern, high-contrast light mode design system built for professional reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrhqDFgT2mUNIa59e2PBLE4tRbpMGpWQJSPHWbYxsF6z5Jk_rKSAtQiChkbxrIzq4hQABqwU_WpR9iZirLxaRnMMFL_GGGs2Dmbq6wj56p_aHV4VhIN_sz2-w2dvnh18Vfp3NQgJlEFLN9BjskC8ejYwxwsTd7KMP8N72UK-i5CjnSD5n3nw9i-BSjPfGGToZM2iLccH5kNUdk9EO1B6eDRQ6KDX8CDdcn1zOqRVOmGsi9O20FnNsCdSIfACSH1LOPzKA72CRM1Z0"/>
+<!-- Verification Badge Overlay -->
+<div class="absolute bottom-4 left-4 bg-surface rounded-full py-2 px-4 shadow-sm border border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified" data-weight="fill">verified</span>
+<span class="font-label-lg text-label-lg text-on-surface">Verified Professionals</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center mb-stack-md w-full">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-stack-sm">
+                Maligayang Pagdating!
+            </h1>
+<p class="font-cta text-cta text-on-surface mb-base">
+                Simulan nating ayusin ang iyong tahanan.
+            </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                Konektado ka sa pinakamagagaling na tubero, kuryente, at karpintero sa iyong lugar.
+            </p>
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<footer class="w-full p-margin-mobile bg-surface border-t border-outline-variant/20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] md:static md:border-none md:shadow-none md:bg-transparent md:max-w-2xl md:mx-auto md:pb-margin-desktop">
+<button class="w-full h-touch-target-min bg-primary text-on-primary font-cta text-cta rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 active:scale-95 transition-all shadow-sm">
+            Magpatuloy
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</footer>
+</body></html>

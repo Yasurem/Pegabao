@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PegaBao - Customer Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#522d19",
+                        "on-primary-fixed": "#311303",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "tertiary-fixed": "#dde1ff",
+                        "surface-container": "#efedec",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#989ebe",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#f4ba9e",
+                        "primary": "#80543d",
+                        "surface-tint": "#80543d",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-dim": "#dbdad8",
+                        "on-secondary-container": "#744600",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#2f3550",
+                        "tertiary": "#575d7a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdb65f",
+                        "inverse-surface": "#30302f",
+                        "surface-bright": "#fbf9f7",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed": "#ffddb9",
+                        "primary-fixed": "#ffdbcb",
+                        "secondary": "#875300",
+                        "on-surface": "#1b1c1b",
+                        "outline-variant": "#d6c3bb",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface-variant": "#51443e",
+                        "background": "#fbf9f7",
+                        "primary-container": "#c99379",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-background": "#1b1c1b",
+                        "outline": "#83746d",
+                        "surface-container-low": "#f5f3f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "touch-target-min": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen relative pb-[100px]">
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant/20 flat no shadows flex justify-between items-center px-margin-mobile py-base w-full transition-colors">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant/20 flex items-center justify-center cursor-pointer active:scale-95 duration-100">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a young Filipina woman smiling warmly under bright, natural sunlight. The image should have a high-contrast modern aesthetic with vibrant, saturated colors. She is wearing a simple casual white top, set against a softly blurred urban background. The overall mood conveys approachability and dependability, fitting for a community-centric gig economy app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnDqZk97ezmOHwjlsiv5l549ReJ3XGbB6QBYEI2Z13qIK-V3C4V5erYd93llCMcldjPB-Zz0MFQBt0vitmZvreDUldxQDUnkbpNCQgY_Q4z9vRNshGgCHO5BX_jYUVO8ACnvwH3xlxPsRMeiVpGLyVE_Z5vfiKE7EOFWidgZAV0di92Fg4RkrTTTLAMs7vR8JkmGkJ8yX4hixZ7UCpx6009kmSeIGMtZ1qa7j7ffMexQ-ElPeRNTDxY7sruf27HsSCTKymqrIfrhw"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">PegaBao</h1>
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-95 duration-100 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_on</span>
+</button>
+</header>
+<main class="px-margin-mobile pt-stack-sm flex flex-col gap-stack-md">
+<section class="flex flex-col gap-base">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">my_location</span>
+<p class="font-body-md text-body-md font-semibold">Quezon City, Metro Manila</p>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-touch-target-min pl-12 pr-4 bg-surface-container-lowest border-2 border-on-tertiary-container/30 focus:border-secondary-container rounded-lg font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/60 shadow-sm transition-colors outline-none" placeholder="Ano ang kailangang ayusin?" type="text"/>
+</div>
+</section>
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Services</h2>
+<div class="grid grid-cols-3 gap-gutter">
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">carpenter</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">Carpentry</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">plumbing</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">Plumbing</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">electrical_services</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">Electrical</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">key</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">Locksmith</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">format_paint</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">Painting</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 bg-surface-container-lowest border border-outline-variant/20 rounded-xl shadow-sm active:scale-95 transition-transform">
+<div class="w-12 h-12 rounded-full bg-outline-variant/30 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface text-center leading-tight">General</span>
+</button>
+</div>
+</section>
+<section class="flex flex-col gap-stack-sm pb-8">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Top-rated near you</h2>
+<a class="font-label-lg text-label-lg text-primary font-bold" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 snap-x pb-4 -mx-margin-mobile px-margin-mobile">
+<div class="min-w-[260px] bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4 shadow-sm snap-start flex gap-4">
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Plumber portrait" class="w-full h-full object-cover" data-alt="A brightly lit, high-contrast portrait of a middle-aged Filipino tradesman wearing a clean, dark blue uniform shirt. He has a warm, dependable smile and is positioned against a clean, off-white background. The lighting emphasizes his strong, capable features, reflecting a sense of community trust and professional reliability suitable for a local service platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz72t0IZfxHRwcB-WwDUGOp882IFrE13v64sjuTfq1XB4VU5HSszWin7C520TXKHEQ8SjHaUmYTdMeZ6q83AyaOu-wpfdck8OIQv78v-AzhYj9cyn6on2vtFrFtRJWmeq7rqhk6ovozLO3zbRsaF0jj6yRqEiR_VPyrC5ggkqIUsf1qhfRokA8yaBgE-oO2m4a5XTRqM6quIuboGgtQS_SzlssZ6t-enje1U7MdItGV1I2e80uF98ExgDLM9KG2P2wXOoxEttonuo"/>
+</div>
+<div class="flex flex-col justify-center w-full">
+<div class="flex items-center gap-1">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface leading-none">Kuya Jun</h3>
+<div class="flex items-center justify-center bg-on-tertiary-container text-surface-container-lowest rounded-full w-4 h-4 relative" title="Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="material-symbols-outlined text-[8px] absolute text-secondary-container font-bold">check</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert Plumber</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary-container text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">4.9</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-1">(124 jobs)</span>
+</div>
+</div>
+</div>
+<div class="min-w-[260px] bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4 shadow-sm snap-start flex gap-4">
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Electrician portrait" class="w-full h-full object-cover" data-alt="A portrait of a skilled Filipino electrician in his 30s, smiling confidently under bright daylight. He wears a high-visibility orange vest over a neutral shirt. The aesthetic is clean, modern, and high-contrast, utilizing a solid bright background to make the subject pop. The image conveys professionalism, safety, and a strong work ethic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSK5RAuoCmBYk6rQSqH8ldenqsu0QsYAEO5T3U7bWl1ujDjYimuCSGd_mSLpkVJ3QaE0gW0u_k2BqWOlTHjljTOsKeX8hj05XOFYMSuvAJipkCcEgpBSRC7DVDFb8exWj18cibUwASJPOmrh-jAZoukE6n0fSUWBAHI-72W1QVcLuo6dRgH2KXOhpVfWi7xobkJHg2EC1q7c04-TPDFdlOmVGlULSCMoNPE841m6veWTv7y3uplL7oVx4dnRdC_ssiEG9SHT875yc"/>
+</div>
+<div class="flex flex-col justify-center w-full">
+<div class="flex items-center gap-1">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface leading-none">Mang Lando</h3>
+<div class="flex items-center justify-center bg-on-tertiary-container text-surface-container-lowest rounded-full w-4 h-4 relative" title="Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="material-symbols-outlined text-[8px] absolute text-secondary-container font-bold">check</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Master Electrician</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-secondary-container text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">4.8</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-1">(98 jobs)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-safe bg-surface-container-lowest border-t border-outline-variant/20 shadow-sm h-[80px]">
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-lg text-label-lg mt-1 hidden md:block">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">search</span>
+<span class="font-label-lg text-label-lg mt-1 hidden md:block">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">event_note</span>
+<span class="font-label-lg text-label-lg mt-1 hidden md:block">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">chat</span>
+<span class="font-label-lg text-label-lg mt-1 hidden md:block">Messages</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-lg text-label-lg mt-1 hidden md:block">Profile</span>
+</button>
+</nav>
+</body></html>

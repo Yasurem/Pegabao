@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tradesperson Public Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#522d19",
+                        "on-primary-fixed": "#311303",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "tertiary-fixed": "#dde1ff",
+                        "surface-container": "#efedec",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#989ebe",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#f4ba9e",
+                        "primary": "#80543d",
+                        "surface-tint": "#80543d",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-dim": "#dbdad8",
+                        "on-secondary-container": "#744600",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#2f3550",
+                        "tertiary": "#575d7a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdb65f",
+                        "inverse-surface": "#30302f",
+                        "surface-bright": "#fbf9f7",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed": "#ffddb9",
+                        "primary-fixed": "#ffdbcb",
+                        "secondary": "#875300",
+                        "on-surface": "#1b1c1b",
+                        "outline-variant": "#d6c3bb",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface-variant": "#51443e",
+                        "background": "#fbf9f7",
+                        "primary-container": "#c99379",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-background": "#1b1c1b",
+                        "outline": "#83746d",
+                        "surface-container-low": "#f5f3f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "touch-target-min": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-[100px] md:pb-0">
+<!-- Top Navigation -->
+<header class="bg-surface w-full top-0 sticky z-50 flex justify-between items-center px-margin-mobile py-base border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<button class="w-[48px] h-[48px] flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary">PegaBao</span>
+</div>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-primary hover:bg-surface-container-high rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">share</span>
+</button>
+</header>
+<main class="max-w-4xl mx-auto md:px-margin-desktop md:py-margin-desktop">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest md:rounded-xl md:shadow-sm md:border md:border-outline-variant/20 overflow-hidden mb-stack-md">
+<div class="relative h-48 md:h-64 w-full bg-surface-container-high">
+<img alt="Hero background" class="w-full h-full object-cover" data-alt="A rugged, dependable construction worker standing confidently on a vibrant sunlit job site in the Philippines. The scene is bathed in warm golden hour light, reflecting the high-contrast modernism and Bayanihan spirit. The worker wears a hard hat and protective gear, set against a blurred background of scaffolding and clear skies, embodying professionalism and community trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByAUUHN28KZNpCrDYNOKh6P0wiq4Xvm_Oxl59YusfPF0chPYYm0q9VPwFsiMXJygH4zbF4n-gdTNBFXb5YW_WuFUA-0pKOVDaw2eFJuoFecLMRkaFr7zzjIC54vvP3icb71md-RduFWxoVB4iDu7qv8Jq53DN1s2zMzCB9DCUyWutrmoDDcemxv54QOo5irAs2pLB0dKfLGazcKQiKaI0TniByIO7YlFkZSybOw2TGswIzBdomQqAgRRffIQk5-7997JkTYPY6I8g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="px-margin-mobile pb-stack-md relative -mt-16 z-10">
+<div class="flex flex-col md:flex-row md:items-end gap-stack-sm md:gap-stack-md">
+<img alt="Profile Picture" class="w-32 h-32 rounded-full border-4 border-surface-container-lowest object-cover bg-surface-container-low shadow-sm" data-alt="Close-up portrait of a friendly, dependable Filipino tradesman with a warm smile. He is wearing a clean, professional uniform with a toolbelt visible. The lighting is bright and high-contrast, highlighting his trustworthy demeanor and reflecting the reliable, community-centric brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzYvPSfz8VLjRfyf40huJHn9AlxNIhvZTaHyCzgxcHQ9K30F95baTtUqNlI0Oqm7Ef_q0_yZ0cSCZj1ioo5mEjdUqLEtuiKRrGu4zF4C12iJZfBc4N8VhZQlWMnFNeiQnrSJgMbLUF4hdV_XZp6tWZag62jwUgZeH5aQKyaFc2b3fTw11zn3G2JHDDz5Y5jF7ajdGOLi8X-AOxl-EB0ap2EOsDtLuMpV9nFkf4IfFHG1kNwJBODQgwDlSTtmBuH049GwoCf3BT2PA"/>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface m-0">Juan Dela Cruz</h1>
+<div class="flex items-center gap-1 bg-tertiary-container/20 text-on-tertiary-container px-2 py-1 rounded-full border border-tertiary-container/30">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-lg text-label-lg text-[12px]">Verified</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant m-0">Master Plumber &amp; General Contractor</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-3 gap-2 px-margin-mobile mb-stack-md">
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-secondary-container mb-1 text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-md text-headline-md text-on-surface">4.9</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant text-[12px]">98/100 Rep</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary mb-1 text-[28px]">work</span>
+<span class="font-headline-md text-headline-md text-on-surface">150+</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant text-[12px]">Jobs Done</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm flex flex-col items-center justify-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary mb-1 text-[28px]">calendar_month</span>
+<span class="font-headline-md text-headline-md text-on-surface">2021</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant text-[12px]">Member Since</span>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="px-margin-mobile mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Verified Skills</h2>
+<div class="flex flex-wrap gap-2">
+<div class="bg-tertiary-container/20 border border-tertiary-container/30 rounded-full px-4 py-2 flex items-center gap-2 touch-target-min">
+<span class="font-label-lg text-label-lg text-on-tertiary-container">Plumbing</span>
+<span class="bg-primary text-on-primary text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Master</span>
+</div>
+<div class="bg-tertiary-container/20 border border-tertiary-container/30 rounded-full px-4 py-2 flex items-center gap-2 touch-target-min">
+<span class="font-label-lg text-label-lg text-on-tertiary-container">Carpentry</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Intermediate</span>
+</div>
+<div class="bg-tertiary-container/20 border border-tertiary-container/30 rounded-full px-4 py-2 flex items-center gap-2 touch-target-min">
+<span class="font-label-lg text-label-lg text-on-tertiary-container">Roofing</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Basic</span>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="px-margin-mobile mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Standard Pricing</h2>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm flex justify-between items-center shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Check Pipe Leak</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-[12px]">Diagnostic &amp; minor repair</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">₱400</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm flex justify-between items-center shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Faucet Install</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-[12px]">Labor only</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">₱300</span>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="px-margin-mobile mb-stack-md">
+<div class="flex justify-between items-end mb-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recent Reviews</h2>
+<a class="font-label-lg text-label-lg text-primary hover:underline" href="#">See all</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-stack-sm shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container font-bold">M</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface">Maria S.</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[12px]">2 days ago</div>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Kuya Juan was very professional and fixed our leaking pipe in no time. Highly recommended!</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action (Mobile) -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-outline-variant/20 p-margin-mobile z-40 md:hidden">
+<button class="w-full bg-primary-container text-on-primary-container font-cta text-cta h-touch-target-min rounded-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm">
+<span class="material-symbols-outlined">handyman</span>
+            Book Service Now
+        </button>
+</div>
+</body></html>

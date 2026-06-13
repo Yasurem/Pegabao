@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - PegaBao</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#522d19",
+                        "on-primary-fixed": "#311303",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "tertiary-fixed": "#dde1ff",
+                        "surface-container": "#efedec",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#989ebe",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#f4ba9e",
+                        "primary": "#80543d",
+                        "surface-tint": "#80543d",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-dim": "#dbdad8",
+                        "on-secondary-container": "#744600",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#2f3550",
+                        "tertiary": "#575d7a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdb65f",
+                        "inverse-surface": "#30302f",
+                        "surface-bright": "#fbf9f7",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed": "#ffddb9",
+                        "primary-fixed": "#ffdbcb",
+                        "secondary": "#875300",
+                        "on-surface": "#1b1c1b",
+                        "outline-variant": "#d6c3bb",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface-variant": "#51443e",
+                        "background": "#fbf9f7",
+                        "primary-container": "#c99379",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-background": "#1b1c1b",
+                        "outline": "#83746d",
+                        "surface-container-low": "#f5f3f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "touch-target-min": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-[80px] md:pb-0 font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b border-outline-variant/20 dark:border-outline-variant/10 z-40">
+<div class="flex justify-between items-center px-margin-mobile py-base w-full">
+<div class="flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a friendly Filipino tradesman with a slight smile, wearing a simple collared shirt. Soft, warm natural lighting highlights the reliable and approachable mood. High-contrast modernism aesthetic with deep, warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEbKEEEO5EV2UTybBUT_MSZClNhfy7NOokwnHn501pTp9imUTXBGkj6zinW3gJ2NfYEJ3F7igyjP4CyVM17ik6apec2cXpFXJ9KQcEOGtsjifH-q0uHKur1Q1O0Ifn0fFqJE6Gixlz6uUTEKd2BaAHUjpOaZbaNsbyU2tmle7zJQ0u5UIN5FV76O8bLenVy8A0BvoHjtlNt-toAckf60N74cFaznXN079MxeGodbC64hkj-w5knDqcrZ3mMudwZk-zsij3q_ccWq4"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">PegaBao</h1>
+</div>
+<!-- Desktop Nav Cluster (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-stack-md">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-lg active:scale-95 duration-100 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">home</span>Home
+                </a>
+<a class="font-label-lg text-label-lg text-primary bg-secondary-container text-on-secondary-container hover:bg-surface-container-high transition-colors px-4 py-2 rounded-lg active:scale-95 duration-100 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>Search
+                </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-lg active:scale-95 duration-100 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">event_note</span>Bookings
+                </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-lg active:scale-95 duration-100 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">chat</span>Messages
+                </a>
+</nav>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full active:scale-95 duration-100">
+<span class="material-symbols-outlined text-2xl text-primary">location_on</span>
+</button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-md flex flex-col gap-stack-md">
+<!-- Search Input & Filters -->
+<section class="flex flex-col gap-stack-sm">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">search</span>
+<input class="w-full h-[56px] pl-12 pr-4 bg-surface-container-lowest border-2 border-outline rounded-lg focus:border-secondary focus:ring-0 font-body-lg text-on-surface placeholder:text-on-surface-variant outline-none transition-colors" placeholder="Find a service (e.g. Plumber, Electrician)" type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 hide-scrollbar">
+<button class="shrink-0 h-[48px] px-4 rounded-full bg-tertiary-container text-on-tertiary-container font-label-lg text-label-lg border border-transparent flex items-center gap-2 hover:bg-tertiary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-lg">near_me</span>
+                    Nearby
+                </button>
+<button class="shrink-0 h-[48px] px-4 rounded-full bg-surface-container-lowest border-2 border-outline-variant text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container transition-colors">
+                    Lowest Price
+                </button>
+<button class="shrink-0 h-[48px] px-4 rounded-full bg-surface-container-lowest border-2 border-outline-variant text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container transition-colors">
+                    Highest Rated
+                </button>
+</div>
+</section>
+<div class="flex justify-between items-center mt-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Available Professionals</h2>
+<span class="font-body-md text-on-surface-variant">24 near you</span>
+</div>
+<!-- Professional List -->
+<section class="flex flex-col gap-stack-sm">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/20 shadow-[0_4px_6px_-1px_rgba(53,59,86,0.05)] flex flex-col sm:flex-row gap-4 relative overflow-hidden group">
+<div class="flex-shrink-0 relative self-start">
+<img alt="Profile" class="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] rounded-full object-cover border-4 border-surface" data-alt="A professional Filipino plumber in a neat blue uniform looking confidently at the camera. Bright, sunny outdoor lighting with a blurred background showing a typical residential street. The image exudes trust, reliability, and modern high-contrast aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzxVKHq0Om9ymtcIDjzJVzHi4slTWkmhyTLYtwXUCwClKctnT4KIBV3a21x-Bcyav-XaiGoc5eA7A4yY0WI7t2IxultwMteav0Sfg5riKSsc338oO_mnmtMEr322slgXp98fsiTlDKTT0gE4DMJQrRjxF7sNv6mwygL1Kf6ZxuId_9fO3OLutTqPHlrd2H3Peo1Ikip6NwEZcFXtNJ4Ynb3CAHsQAzFYkJmN0CU2_4QzofxYGxc0OmIE2ml-tDR5tYuAbFlPi_2Vo"/>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-secondary-container text-on-secondary-container font-label-lg text-xs px-2 py-1 rounded-full whitespace-nowrap flex items-center gap-1 shadow-sm border border-secondary/20">
+<span class="material-symbols-outlined text-[14px]">verified</span>Verified
+                    </div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Mang Juan</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">Expert Plumber <span class="text-tertiary">•</span> 5km away</p>
+</div>
+<div class="bg-surface-container px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">4.9</span>
+<span class="text-on-surface-variant text-sm font-body-md">(120)</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-3 py-1 bg-tertiary-container/30 text-on-tertiary-container rounded-full font-label-lg text-xs">Leak Repair</span>
+<span class="px-3 py-1 bg-tertiary-container/30 text-on-tertiary-container rounded-full font-label-lg text-xs">Pipe Installation</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 gap-4">
+<div class="font-body-lg text-on-surface">
+<span class="font-bold text-primary">₱500</span> <span class="text-on-surface-variant text-sm">est. starting fee</span>
+</div>
+<button class="w-full sm:w-auto h-[48px] px-6 bg-primary text-on-primary font-cta text-cta rounded-lg hover:bg-on-primary-fixed-variant transition-colors active:scale-95">
+                            View Profile
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/20 shadow-[0_4px_6px_-1px_rgba(53,59,86,0.05)] flex flex-col sm:flex-row gap-4 relative overflow-hidden group">
+<div class="flex-shrink-0 relative self-start">
+<img alt="Profile" class="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] rounded-full object-cover border-4 border-surface" data-alt="A portrait of a skilled electrician wearing safety gear, standing in front of an electrical panel. Strong, reliable posture. Lighting is bright and focused, creating a high-contrast modern feel with deep shadows and warm highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1TVRitzAu4pgZCvrExjYgFuWl9OLdqs8rYydNfnu_t6oD7G5QY7wKKZQHoiJ-cEOWBNcoBDyiFZIXeqj_1LNzq4LHC1vvjYbDMkoV9fYPgfQucamNuXYY5levNMy0whjAQpCq4kOkoJ8C095DGBQKwVNuYXK9CYGp8gxwD9nrf6v4JRmYZIZPQjttz7qdvloBKLuQPw0noXaiodNTm9h-dkjBgDKicluzlkpLLVAvlouS6MKw0fRxb8r4_zUf0tDZTD2mi8aJwBs"/>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-secondary-container text-on-secondary-container font-label-lg text-xs px-2 py-1 rounded-full whitespace-nowrap flex items-center gap-1 shadow-sm border border-secondary/20">
+<span class="material-symbols-outlined text-[14px]">verified</span>Verified
+                    </div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Kuya Lito</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-1">Master Electrician <span class="text-tertiary">•</span> 2.5km away</p>
+</div>
+<div class="bg-surface-container px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">4.8</span>
+<span class="text-on-surface-variant text-sm font-body-md">(85)</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="px-3 py-1 bg-tertiary-container/30 text-on-tertiary-container rounded-full font-label-lg text-xs">Rewiring</span>
+<span class="px-3 py-1 bg-tertiary-container/30 text-on-tertiary-container rounded-full font-label-lg text-xs">Troubleshooting</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 gap-4">
+<div class="font-body-lg text-on-surface">
+<span class="font-bold text-primary">₱800</span> <span class="text-on-surface-variant text-sm">est. starting fee</span>
+</div>
+<button class="w-full sm:w-auto h-[48px] px-6 border-2 border-primary text-primary font-cta text-cta rounded-lg hover:bg-primary/5 transition-colors active:scale-95">
+                            View Profile
+                        </button>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-safe bg-surface-container-lowest dark:bg-surface-container-low border-t border-outline-variant/20 shadow-sm h-[80px]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-label-lg text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-lg text-[10px] mt-1 font-bold">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl">event_note</span>
+<span class="font-label-lg text-[10px] mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="font-label-lg text-[10px] mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-label-lg text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 16px);
+        }
+    </style>
+</body></html>

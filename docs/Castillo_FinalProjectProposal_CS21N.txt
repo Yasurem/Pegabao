@@ -1,0 +1,60 @@
+﻿May 09, 2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PegaBao: A Centralized Freelance Service Registry and Feedback Management System for Informal Skilled Labor
+
+
+
+
+
+
+
+
+
+
+
+
+Joemarc Jr. D. Castillo
+BSCS 2-1N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scenario
+The informal skilled labor sector in the Philippines—comprising independent tradesmen such as carpenters, locksmiths, and plumbers—struggles with client acquisition in an increasingly digitized economy. Moreover, households requiring maintenance and repairs face a significant information gap when attempting to source capable workers. Currently, there is no centralized digital registry that connects local tradesmen with prospective clients. As a result, citizens are forced to rely on inefficient, traditional methods: navigating fragmented and unverified word-of-mouth referrals, or physically scouting in local hardware stores and marketplaces. This proposal introduces PegaBao, a centralized platform designed to resolve this data asymmetry. By migrating informal skilled labor into a structured, searchable digital database, the system aims to empower local craftsmen with verifiable professional visibility, thereby standardizing client acquisition and generating more consistent economic opportunities for their families.
+
+
+Information Management Gap
+Today, the extreme fragmentation of service records within the Philippine informal labor sector remains a critical, unaddressed issue. Crucial details regarding a tradesperson’s true expertise, specific skill sets, and current availability are practically unverifiable due to highly unstructured and undocumented information. Currently, this data is either siloed offline—accessible only through unreliable human memory and physical proximity—or buried within the depths of disorganized social media threads. Moreover, this lack of centralized, easy-access database prevents local tradesmen from building a proper professional reputation and forces potential customers to hire based on blind risk.
+
+
+Proposed Solution
+To resolve this crisis, we introduce PegaBao, a centralized gig-economy web application database system. Pegabao will have five (5) distinct strong entities which are the Tradesmen, Customers, Services, Bookings, and Reviews. From these entities, junction tables like tradesperson_Skills may be derived. A local tradesperson applies to sell their services wherein they may input the set of skills they offer, their level of mastery, and the price they sell these services for. Customers will then just sign up for an account and they will be able to access the services of the tradespeople, their credibility and integrity, and other customers’ feedback. The customers may avail a tradesperson’s services through a booking in which such transactions will be stored in a relational database. This system structures data and displays verified reputation scores.

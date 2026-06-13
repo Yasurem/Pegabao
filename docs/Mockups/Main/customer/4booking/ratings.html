@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post-Job Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#522d19",
+                        "on-primary-fixed": "#311303",
+                        "on-secondary-fixed-variant": "#663e00",
+                        "tertiary-fixed": "#dde1ff",
+                        "surface-container": "#efedec",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#989ebe",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#f4ba9e",
+                        "primary": "#80543d",
+                        "surface-tint": "#80543d",
+                        "primary-fixed-dim": "#f4ba9e",
+                        "surface-dim": "#dbdad8",
+                        "on-secondary-container": "#744600",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#2f3550",
+                        "tertiary": "#575d7a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f7",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdb65f",
+                        "inverse-surface": "#30302f",
+                        "surface-bright": "#fbf9f7",
+                        "surface-variant": "#e4e2e0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ee",
+                        "secondary-fixed": "#ffddb9",
+                        "primary-fixed": "#ffdbcb",
+                        "secondary": "#875300",
+                        "on-surface": "#1b1c1b",
+                        "outline-variant": "#d6c3bb",
+                        "surface-container-highest": "#e4e2e0",
+                        "on-tertiary-fixed": "#141a33",
+                        "on-surface-variant": "#51443e",
+                        "background": "#fbf9f7",
+                        "primary-container": "#c99379",
+                        "on-primary-fixed-variant": "#653d28",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb964",
+                        "on-background": "#1b1c1b",
+                        "outline": "#83746d",
+                        "surface-container-low": "#f5f3f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc5e6",
+                        "on-tertiary-fixed-variant": "#3f4561",
+                        "surface-container-high": "#eae8e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "touch-target-min": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "cta": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "cta": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Utility for Material Icons */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar Shared Component -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b border-outline-variant/20 dark:border-outline-variant/10 z-40">
+<div class="flex justify-between items-center px-margin-mobile py-base w-full h-[64px]">
+<!-- Leading: Custom Back Button for Task Flow, overriding avatar to match UX rules for deep links -->
+<button class="h-touch-target-min w-touch-target-min flex items-center justify-start text-on-surface-variant hover:bg-surface-container-high active:scale-95 duration-100 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[28px]">arrow_back</span>
+</button>
+<!-- Headline -->
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim absolute left-1/2 transform -translate-x-1/2">
+                PegaBao
+            </h1>
+<!-- Trailing Icon -->
+<button class="h-touch-target-min w-touch-target-min flex items-center justify-end text-on-surface-variant hover:bg-surface-container-high active:scale-95 duration-100 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="location_on">location_on</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<!-- Suppressed BottomNavBar as this is a focused, transactional task (Review) -->
+<main class="flex-1 flex flex-col px-margin-mobile py-stack-md gap-stack-md md:max-w-2xl md:mx-auto md:w-full pb-32">
+<!-- Header Section -->
+<section class="flex flex-col items-center text-center gap-stack-sm pt-4">
+<div class="w-[88px] h-[88px] rounded-full overflow-hidden border-2 border-surface-container-highest shadow-sm relative">
+<img alt="Mang Juan Portrait" class="w-full h-full object-cover" data-alt="A medium close-up portrait of a dependable, middle-aged Filipino tradesman wearing a practical dark blue work shirt. He has a warm, confident smile, conveying trust and experience in his craft. The lighting is bright and natural, reflecting a sunny outdoor environment typical of a busy gig economy worker. The background is softly blurred to keep the focus on his friendly expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgkWKNoagQKBkmx9WMw_xC7gv-8dKZlhmwvk-NUDOSqMr8N88Qz9WBZhiWxi9Czwg5pdQzDkPRnjtbvfk6jzkYd8_dUtj08gXQcjd_c75GCjUKkNqEbbWLPT6cdUJkiMqKlx7mf9H36RcIqVxGan-4vqjpExKTdR_r776fa2ewJqLQA7Oe7JajwH8rsNbdr0bgky6fPU03tHdEj38hBL-7mX5kPViTVSFZagIfIaUkaaxxNpXnkqONQzehr4APNDR_hZbFT_-QJsA"/>
+<!-- Verification Badge overlay -->
+<div class="absolute bottom-0 right-0 bg-surface rounded-full p-[2px]">
+<div class="bg-tertiary text-secondary-container rounded-full w-6 h-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] fill">verified</span>
+</div>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface px-4">
+                How was the service of Mang Juan?
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Plumbing Repair • Today, 10:00 AM</p>
+</section>
+<!-- Star Rating Interactive UI -->
+<section class="flex flex-col items-center gap-stack-sm py-4">
+<div class="flex gap-2 justify-center" id="star-rating-container">
+<!-- Stars rendered large for touch targets -->
+<button class="star-btn p-2 h-touch-target-min w-touch-target-min flex items-center justify-center active:scale-90 transition-transform" data-rating="1" type="button">
+<span class="material-symbols-outlined text-[40px] text-outline-variant transition-colors duration-200">star</span>
+</button>
+<button class="star-btn p-2 h-touch-target-min w-touch-target-min flex items-center justify-center active:scale-90 transition-transform" data-rating="2" type="button">
+<span class="material-symbols-outlined text-[40px] text-outline-variant transition-colors duration-200">star</span>
+</button>
+<button class="star-btn p-2 h-touch-target-min w-touch-target-min flex items-center justify-center active:scale-90 transition-transform" data-rating="3" type="button">
+<span class="material-symbols-outlined text-[40px] text-outline-variant transition-colors duration-200">star</span>
+</button>
+<button class="star-btn p-2 h-touch-target-min w-touch-target-min flex items-center justify-center active:scale-90 transition-transform" data-rating="4" type="button">
+<span class="material-symbols-outlined text-[40px] text-outline-variant transition-colors duration-200">star</span>
+</button>
+<button class="star-btn p-2 h-touch-target-min w-touch-target-min flex items-center justify-center active:scale-90 transition-transform" data-rating="5" type="button">
+<span class="material-symbols-outlined text-[40px] text-outline-variant transition-colors duration-200">star</span>
+</button>
+</div>
+<span class="font-label-lg text-label-lg text-secondary h-6 transition-opacity opacity-0" id="rating-label">Excellent work!</span>
+</section>
+<!-- Form Elements -->
+<form class="flex flex-col gap-stack-md w-full">
+<!-- Photo Upload Area (Flat-Plus Card Style) -->
+<div class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-4 flex flex-col gap-3 shadow-[0_4px_12px_rgba(87,93,122,0.05)]">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary">photo_camera</span>
+                    Proof of Work (Optional)
+                </label>
+<!-- Secondary Action Button Style -->
+<button class="h-[56px] w-full border-2 border-tertiary text-tertiary font-cta text-cta rounded-full flex items-center justify-center gap-2 hover:bg-tertiary/5 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+                    Add a photo of the repair
+                </button>
+</div>
+<!-- Feedback Text Area -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface px-1" for="feedback">Detailed Feedback</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border-2 border-tertiary/40 focus:border-secondary-container focus:ring-0 rounded-xl p-4 font-body-lg text-body-lg text-on-surface placeholder-on-surface-variant/50 transition-colors resize-none" id="feedback" placeholder="Ikwento ang karanasan..." rows="4"></textarea>
+</div>
+</div>
+<!-- Reward Teaser Card -->
+<div class="bg-primary-container/10 border border-primary-container/30 rounded-xl p-4 flex items-start gap-4 mt-2">
+<div class="bg-primary-container text-on-primary-container rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined fill text-[24px]">redeem</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-label-lg text-label-lg text-on-surface">Review Reward</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Get ₱50 off your next booking for reviewing!</p>
+</div>
+</div>
+</form>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant/20 p-margin-mobile z-40 pb-[max(16px,env(safe-area-inset-bottom))]">
+<div class="md:max-w-2xl md:mx-auto w-full">
+<!-- Primary Action Button -->
+<button class="w-full h-[56px] bg-primary-container text-on-primary-container font-cta text-cta rounded-full flex items-center justify-center active:scale-[0.98] hover:brightness-95 transition-all shadow-sm" type="button">
+                Submit Review
+            </button>
+</div>
+</div>
+<!-- Micro-interaction Script for Stars -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('.star-btn');
+            const ratingLabel = document.getElementById('rating-label');
+            const labels = ["Needs Improvement", "Fair", "Good", "Very Good", "Excellent work!"];
+            let currentRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', (e) => {
+                    const rating = parseInt(e.currentTarget.getAttribute('data-rating'));
+                    currentRating = rating;
+                    
+                    // Update star visuals
+                    stars.forEach((s, index) => {
+                        const icon = s.querySelector('span');
+                        if (index < rating) {
+                            icon.classList.add('fill', 'text-secondary-container');
+                            icon.classList.remove('text-outline-variant');
+                            // Add a tiny bounce animation
+                            icon.style.transform = 'scale(1.2)';
+                            setTimeout(() => { icon.style.transform = 'scale(1)'; }, 150);
+                        } else {
+                            icon.classList.remove('fill', 'text-secondary-container');
+                            icon.classList.add('text-outline-variant');
+                        }
+                    });
+
+                    // Update label
+                    ratingLabel.textContent = labels[rating - 1];
+                    ratingLabel.classList.remove('opacity-0');
+                    ratingLabel.classList.add('opacity-100');
+                });
+            });
+        });
+    </script>
+</body></html>

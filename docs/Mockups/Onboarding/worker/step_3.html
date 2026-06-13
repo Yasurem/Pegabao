@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tradesperson Onboarding - PegaBao</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#83746d",
+                      "inverse-on-surface": "#f2f0ee",
+                      "secondary-fixed-dim": "#ffb964",
+                      "on-primary-fixed": "#311303",
+                      "surface-container": "#efedec",
+                      "tertiary-container": "#989ebe",
+                      "surface-container-highest": "#e4e2e0",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#d6c3bb",
+                      "surface": "#fbf9f7",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#bfc5e6",
+                      "surface-variant": "#e4e2e0",
+                      "on-primary-fixed-variant": "#653d28",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#522d19",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#dde1ff",
+                      "secondary": "#875300",
+                      "primary": "#80543d",
+                      "surface-dim": "#dbdad8",
+                      "secondary-fixed": "#ffddb9",
+                      "on-background": "#1b1c1b",
+                      "secondary-container": "#fdb65f",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#ffdbcb",
+                      "on-tertiary-container": "#2f3550",
+                      "inverse-primary": "#f4ba9e",
+                      "surface-container-low": "#f5f3f1",
+                      "inverse-surface": "#30302f",
+                      "on-tertiary-fixed": "#141a33",
+                      "on-surface": "#1b1c1b",
+                      "on-secondary-container": "#744600",
+                      "tertiary": "#575d7a",
+                      "primary-fixed-dim": "#f4ba9e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#51443e",
+                      "surface-bright": "#fbf9f7",
+                      "on-secondary-fixed": "#2b1700",
+                      "on-tertiary-fixed-variant": "#3f4561",
+                      "surface-container-high": "#eae8e6",
+                      "on-secondary-fixed-variant": "#663e00",
+                      "primary-container": "#c99379",
+                      "background": "#fbf9f7",
+                      "surface-tint": "#80543d",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "24px",
+                      "stack-sm": "12px",
+                      "base": "8px",
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "touch-target-min": "48px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "cta": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "cta": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col justify-between">
+<!-- Header (Suppressed main nav for transactional flow, keeping brand anchor) -->
+<header class="bg-surface border-b border-outline-variant/20 px-margin-mobile py-base sticky top-0 z-10 w-full flex justify-between items-center h-[72px]">
+<div class="flex items-center gap-2">
+<!-- Back Button -->
+<button aria-label="Go back" class="w-[48px] h-[48px] flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary">PegaBao</span>
+</div>
+<div class="text-on-surface-variant font-label-lg text-label-lg">
+            Step 2 ng 2
+        </div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto w-full max-w-2xl mx-auto pb-safe">
+<div class="px-margin-mobile py-stack-md flex flex-col gap-stack-md mt-4">
+<!-- Page Title & Intent -->
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background">Ipakilala ang iyong sarili</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Maglagay ng propesyonal na litrato at impormasyon upang mas magtiwala ang mga kliyente sa iyo.</p>
+</div>
+<!-- Profile Photo Upload -->
+<section class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col items-center gap-4">
+<div class="relative w-32 h-32 rounded-full bg-surface-container flex items-center justify-center border-2 border-dashed border-tertiary-container overflow-hidden group cursor-pointer transition-colors hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-4xl text-tertiary group-hover:text-tertiary-container transition-colors">add_a_photo</span>
+<input accept="image/*" aria-label="Upload profile photo" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full" type="file"/>
+</div>
+<div class="text-center">
+<span class="block font-label-lg text-label-lg text-primary">Mag-upload ng Litrato</span>
+<span class="block font-body-md text-body-md text-on-surface-variant mt-1">Dapat malinaw ang iyong mukha.</span>
+</div>
+</section>
+<!-- Form Fields -->
+<form class="flex flex-col gap-stack-sm mt-4">
+<!-- Bio / Experience Summary -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface" for="bio">Maikling Bio / Karanasan</label>
+<textarea class="w-full bg-surface border-2 border-outline rounded-lg p-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:border-secondary-container focus:ring-0 transition-colors resize-none min-h-[120px]" id="bio" placeholder="Ikwento ang iyong mga kakayahan at kung bakit ka dapat pagkatiwalaan..." rows="4"></textarea>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm self-end">0 / 300 character</span>
+</div>
+<!-- Years of Experience -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface" for="experience">Taon ng Karanasan</label>
+<div class="relative w-full">
+<select class="w-full bg-surface border-2 border-outline rounded-lg px-4 h-[56px] font-body-md text-body-md text-on-surface focus:border-secondary-container focus:ring-0 transition-colors appearance-none pr-12" id="experience">
+<option disabled="" selected="" value="">Pumili ng taon</option>
+<option value="1">1 taon pababa</option>
+<option value="2-3">2 - 3 taon</option>
+<option value="4-5">4 - 5 taon</option>
+<option value="5+">Higit sa 5 taon</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Trust Badges (Visual cue of what they get by completing this) -->
+<div class="bg-surface-container-low rounded-lg p-4 mt-4 flex items-start gap-4 border border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed">verified_user</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Tiwala ng Kliyente</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Ang kumpletong profile ay nakakakuha ng 3x mas maraming booking kaysa sa mga hindi kumpleto.</p>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Bottom Action Bar (Fixed for transactional flow) -->
+<div class="w-full bg-surface border-t border-outline-variant/20 p-margin-mobile flex justify-center sticky bottom-0 z-20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<button class="w-full max-w-2xl h-[56px] bg-primary text-on-primary font-cta text-cta rounded-lg flex items-center justify-center gap-2 hover:bg-surface-tint active:scale-[0.98] transition-transform shadow-sm">
+<span>Simulan ang Mag-trabaho</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</body></html>

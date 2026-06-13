@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tradesperson Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-primary-container": "#522d19",
+                            "on-primary-fixed": "#311303",
+                            "on-secondary-fixed-variant": "#663e00",
+                            "tertiary-fixed": "#dde1ff",
+                            "surface-container": "#efedec",
+                            "error": "#ba1a1a",
+                            "tertiary-container": "#989ebe",
+                            "on-secondary": "#ffffff",
+                            "inverse-primary": "#f4ba9e",
+                            "primary": "#80543d",
+                            "surface-tint": "#80543d",
+                            "primary-fixed-dim": "#f4ba9e",
+                            "surface-dim": "#dbdad8",
+                            "on-secondary-container": "#744600",
+                            "error-container": "#ffdad6",
+                            "on-tertiary-container": "#2f3550",
+                            "tertiary": "#575d7a",
+                            "surface-container-lowest": "#ffffff",
+                            "surface": "#fbf9f7",
+                            "on-secondary-fixed": "#2b1700",
+                            "on-tertiary": "#ffffff",
+                            "secondary-container": "#fdb65f",
+                            "inverse-surface": "#30302f",
+                            "surface-bright": "#fbf9f7",
+                            "surface-variant": "#e4e2e0",
+                            "on-primary": "#ffffff",
+                            "inverse-on-surface": "#f2f0ee",
+                            "secondary-fixed": "#ffddb9",
+                            "primary-fixed": "#ffdbcb",
+                            "secondary": "#875300",
+                            "on-surface": "#1b1c1b",
+                            "outline-variant": "#d6c3bb",
+                            "surface-container-highest": "#e4e2e0",
+                            "on-tertiary-fixed": "#141a33",
+                            "on-surface-variant": "#51443e",
+                            "background": "#fbf9f7",
+                            "primary-container": "#c99379",
+                            "on-primary-fixed-variant": "#653d28",
+                            "on-error-container": "#93000a",
+                            "secondary-fixed-dim": "#ffb964",
+                            "on-background": "#1b1c1b",
+                            "outline": "#83746d",
+                            "surface-container-low": "#f5f3f1",
+                            "on-error": "#ffffff",
+                            "tertiary-fixed-dim": "#bfc5e6",
+                            "on-tertiary-fixed-variant": "#3f4561",
+                            "surface-container-high": "#eae8e6",
+                            "delft-blue": "#353b56",
+                            "taupe-gray": "#7d7585",
+                            "earth-yellow": "#fbb45e",
+                            "persian-orange": "#c99379",
+                            "licorice": "#251211"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "margin-desktop": "32px",
+                            "stack-sm": "12px",
+                            "stack-md": "24px",
+                            "margin-mobile": "16px",
+                            "base": "8px",
+                            "touch-target-min": "48px",
+                            "gutter": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg": ["Inter"],
+                            "headline-lg-mobile": ["Inter"],
+                            "cta": ["Inter"],
+                            "label-lg": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "body-md": ["Inter"],
+                            "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+                            "cta": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #c99379;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #c99379;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-[90px] md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky border-b border-outline-variant/20 dark:border-outline-variant/10 flex justify-between items-center px-margin-mobile py-base z-40">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant/20" data-alt="A close up portrait of a confident Filipino tradesman wearing a safety vest and hardhat, smiling warmly. The lighting is bright and outdoorsy, reflecting a sunny day in Manila. The style is highly realistic, high-contrast, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0J5kW7XiPYKNAPe02qTQuV-T-b5vCmGB0cnchzO4KFGWYpcETTF1xjrfYFSyMMFnqEiAtoX4NIpe0ftpyzTcHtf1D7iB38YsC_a3R9DANvD4mN4XhiORLnurwIgLAp8CB8_WvOOQc0xte_q0LydKRh0jeUAr7BkLHFSL2rjALFubKDyxCfEr-Sak8VzQ8oreQCzxZKG7Vs1pgB3o_R4NBAsniJMpLYrKGNc95SdXHD6FIi-LtGqtQf1H2BKmMWNasmK-rbRU5so"/>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">PegaBao</h1>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-100 p-2 rounded-full flex items-center justify-center min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined">location_on</span>
+</button>
+</header>
+<main class="max-w-3xl mx-auto px-margin-mobile py-stack-md flex flex-col gap-stack-md">
+<!-- Welcome & Status -->
+<section class="flex flex-col gap-stack-sm md:flex-row md:items-end md:justify-between bg-surface-container-lowest p-margin-mobile rounded-xl shadow-[0_2px_10px_-3px_rgba(53,59,86,0.1)] border border-outline-variant/20">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary">Magandang araw, Mang Juan!</h2>
+<p class="text-on-surface-variant mt-1">Ready for today's jobs?</p>
+</div>
+<div class="flex items-center gap-3 mt-4 md:mt-0 p-3 bg-surface-container rounded-lg border border-outline-variant/30">
+<span class="font-label-lg text-on-surface">Open for Jobs</span>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in min-h-[32px] flex items-center">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform translate-x-6 border-[#c99379]" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-[#c99379] cursor-pointer w-12" for="toggle"></label>
+</div>
+</div>
+</section>
+<!-- Earnings Summary Bento -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<div class="bg-surface-container-lowest p-margin-mobile rounded-xl shadow-[0_2px_10px_-3px_rgba(53,59,86,0.1)] border border-outline-variant/20 flex flex-col justify-center border-l-4 border-l-[#fbb45e]">
+<p class="font-label-lg text-on-surface-variant uppercase tracking-wider mb-2">Earnings This Week</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg-mobile md:font-headline-lg text-on-surface">₱4,200</span>
+<span class="text-on-surface-variant text-sm bg-surface-container-high px-2 py-1 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-[#80543d]">trending_up</span> +15%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-margin-mobile rounded-xl shadow-[0_2px_10px_-3px_rgba(53,59,86,0.1)] border border-outline-variant/20 flex items-center justify-between">
+<div>
+<p class="font-label-lg text-on-surface-variant uppercase tracking-wider mb-2">Completed Jobs</p>
+<span class="font-headline-lg-mobile md:font-headline-lg text-on-surface">12</span>
+</div>
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl">task_alt</span>
+</div>
+</div>
+</section>
+<!-- Booking Requests -->
+<section>
+<div class="flex items-center justify-between mb-stack-sm">
+<h3 class="font-headline-md text-on-surface">New Requests</h3>
+<span class="bg-error text-on-error font-label-lg px-2 py-1 rounded-full text-xs">1 New</span>
+</div>
+<div class="bg-surface-container-lowest p-margin-mobile rounded-xl shadow-[0_4px_15px_-3px_rgba(53,59,86,0.15)] border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#c99379]"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-[#353b56] text-white font-label-lg px-3 py-1 rounded-full text-xs">Urgent</span>
+<span class="text-on-surface-variant font-body-md flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 10 mins ago</span>
+</div>
+<h4 class="font-headline-md text-on-surface">Electrical Repair</h4>
+<p class="text-on-surface-variant flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[18px]">person</span> Maria Santos</p>
+</div>
+<div class="text-right">
+<span class="block font-headline-md text-on-surface">₱800</span>
+<span class="text-on-surface-variant text-sm">Estimated</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant mb-6 bg-surface-container p-3 rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[#353b56]">near_me</span> 2.5km away</div>
+<div class="w-px h-4 bg-outline-variant"></div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[#353b56]">home_repair_service</span> Wiring Issue</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-[#c99379] text-white font-cta min-h-[56px] rounded-lg active:scale-[0.98] transition-transform flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined fill">check_circle</span> Accept
+                    </button>
+<button class="flex-1 border-2 border-[#353b56] text-[#353b56] font-cta min-h-[56px] rounded-lg hover:bg-surface-container-high transition-colors active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">close</span> Decline
+                    </button>
+</div>
+</div>
+</section>
+<!-- Upcoming Jobs -->
+<section>
+<h3 class="font-headline-md text-on-surface mb-stack-sm">Upcoming Jobs</h3>
+<div class="flex flex-col gap-3">
+<!-- Job Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-[0_2px_8px_-3px_rgba(53,59,86,0.1)] border border-outline-variant/20 flex items-center justify-between hover:border-[#7d7585]/40 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-full flex items-center justify-center text-[#353b56]">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<h4 class="font-label-lg text-on-surface">Plumbing Leak Fix</h4>
+<p class="text-on-surface-variant text-sm flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Today, 2:00 PM</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<!-- Job Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg shadow-[0_2px_8px_-3px_rgba(53,59,86,0.1)] border border-outline-variant/20 flex items-center justify-between hover:border-[#7d7585]/40 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-full flex items-center justify-center text-[#875300]">
+<span class="material-symbols-outlined">format_paint</span>
+</div>
+<div>
+<h4 class="font-label-lg text-on-surface">Wall Painting</h4>
+<p class="text-on-surface-variant text-sm flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Tomorrow, 9:00 AM</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-low fixed bottom-0 w-full z-50 h-[80px] border-t border-outline-variant/20 shadow-sm flex justify-around items-center px-gutter pb-safe md:hidden">
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-transform duration-200 min-w-[48px] min-h-[48px]">
+<span class="material-symbols-outlined fill">home</span>
+<span class="font-label-lg text-label-lg text-xs mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[48px] min-h-[48px]">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-lg text-label-lg text-xs mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[48px] min-h-[48px]">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-lg text-label-lg text-xs mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[48px] min-h-[48px] relative">
+<span class="material-symbols-outlined">chat</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+<span class="font-label-lg text-label-lg text-xs mt-1">Messages</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full active:scale-90 transition-transform duration-200 min-w-[48px] min-h-[48px]">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg text-xs mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

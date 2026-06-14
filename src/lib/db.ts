@@ -4,16 +4,31 @@ import { Pool, type QueryResultRow } from "pg";
 // pool across reloads to avoid exhausting database connections.
 const globalForDb = globalThis as unknown as { pool?: Pool };
 
+// A local database connection (used in dev) needs no TLS; a hosted one
+// (Supabase, used in production) requires it.
+function isLocalConnection(connectionString?: string) {
+  if (!connectionString) return true;
+  try {
+    const host = new URL(connectionString).hostname;
+    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+  } catch {
+    return (
+      connectionString.includes("localhost") ||
+      connectionString.includes("127.0.0.1")
+    );
+  }
+}
+
 function createPool() {
   const connectionString = process.env.DATABASE_URL;
   return new Pool({
     connectionString,
-    // Hosted Postgres (Supabase) requires TLS but uses a cert chain that
-    // node-postgres won't verify by default — opt out of verification when
-    // the URL asks for SSL. Local connections stay non-SSL.
-    ssl: connectionString?.includes("sslmode=require")
-      ? { rejectUnauthorized: false }
-      : undefined,
+    // Enable TLS for any non-local host (e.g. Supabase) regardless of whether
+    // the URL carries sslmode=require. Supabase uses a cert chain node-postgres
+    // won't verify by default, so opt out of verification.
+    ssl: isLocalConnection(connectionString)
+      ? undefined
+      : { rejectUnauthorized: false },
   });
 }
 
